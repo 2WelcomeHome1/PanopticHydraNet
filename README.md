@@ -64,105 +64,104 @@ Neck — это отдельный блок, который создан для 
 
 Рисунок 3 – Архитектура разработанного алгоритма детектирования участников дорожного движения и элементов дорожной инфраструктуры
 
-Таблица 12 – Сравнение разработанного алгоритма паноптической сегментации с существующими по метрике mIoU
-Наименование модели	IoU, %
-Axial-DeepLab-L	68,4
-WeaklySupervised	71,6
-EfficientPanopticModel - B0	73,64
-UPSNet	75,2
-EfficientPanopticModel - B1	75,55
-AUNet	75,6
-Panoptic FPN	75,7
-EfficientPanopticModel - B2	76,51
-Seamless	77,5
-EfficientPanopticModel - B3	77,94
-EfficientPanopticModel - B4	79,18
-AdaptIS	79,2
-EfficientPS	79,3
-DINetwork	79,8
-EfficientPanopticModel - B5	79,85
-Panoptic-DeepLab	80,5
-M-RCNN + PSPNet	80,9
-EfficientPanopticModel - B6	80,9
-OneFormer	83,1
-EfficientPanopticModel - B7	83,37
-В таблице 13 представлены результаты сравнения разработанного алгоритма с существующими по метрике PQ.
-Таблица 13 – Сравнение разработанного алгоритма паноптической сегментации с существующими по метрике PQ
-Наименование модели	PQ, %
-1	2
-Axial-DeepLab-L	41,1
-WeaklySupervised	47,3
-DINetwork	55,4
-TASCNet	55,9
+## Оценка результата работы
+
+Таблица 1 – Сравнение разработанного алгоритма паноптической сегментации с существующими по метрике mIoU
+Наименование модели | IoU, %
+------------- | ------------- 
+Axial-DeepLab-L	| 68,4
+WeaklySupervised	| 71,6
+EfficientPanopticModel - B0	| 73,64
+UPSNet	| 75,2
+EfficientPanopticModel - B1	| 75,55
+AUNet	| 75,6
+Panoptic FPN	| 75,7
+EfficientPanopticModel - B2	| 76,51
+Seamless	| 77,5
+EfficientPanopticModel - B3	| 77,94
+EfficientPanopticModel - B4	| 79,18
+AdaptIS	| 79,2
+EfficientPS	| 79,3
+DINetwork	| 79,8
+EfficientPanopticModel - B5	| 79,85
+Panoptic-DeepLab	| 80,5
+M-RCNN + PSPNet	| 80,9
+EfficientPanopticModel - B6	| 80,9
+OneFormer	| 83,1
+EfficientPanopticModel - B7	| 83,37
+
+Таблица 2 – Сравнение разработанного алгоритма паноптической сегментации с существующими по метрике PQ
+
+Наименование модели	| PQ, %
+------------- | ------------- 
+Axial-DeepLab-L	| 41,1
+WeaklySupervised	| 47,3
+DINetwork	| 55,4
+TASCNet	| 55,9
+DeeperLab	| 56,3
+EfficientPanopticModel - B0	| 57,11
+Panoptic FPN	| 58,1
+EfficientPanopticModel - B1	| 58,59
+AUNet	| 59
+UPSNet	| 59,3
+EfficientPanopticModel - B2	| 59,33
+Seamless	| 60,3
+EfficientPanopticModel - B3	| 60,44
+SSAP	| 61,1
+M-RCNN + PSPNet	| 61,2
+EfficientPanopticModel - B4	| 61,41
+EfficientPanopticModel - B5	| 61,92
+AdaptIS	| 62
+EfficientPanopticModel - B6	| 62,73
+EfficientPanopticModel - B7	| 64,78
+Panoptic-DeepLab	| 67,1
+OneFormer	| 67,6
+EfficientPS	| 67,8
+
+Из таблиц 1–2 видно, что разработанный алгоритм имеет сопоставимые показатели точности и может превосходить большинство современных решений. При этом данный алгоритм, в отличие от существующих, способен выполнять детектирование 250 классов в рамках поставленной задачи, а благодаря меньшему числу параметров значительно снижает нагрузку на вычислительные процессоры, что отражено в таблице 3, и как следствие имеет большую скорость обработки информации, что отражено в таблице 4. 
 
 
-Продолжение таблицы 13
-1	2
-DeeperLab	56,3
-EfficientPanopticModel - B0	57,11
-Panoptic FPN	58,1
-EfficientPanopticModel - B1	58,59
-AUNet	59
-UPSNet	59,3
-EfficientPanopticModel - B2	59,33
-Seamless	60,3
-EfficientPanopticModel - B3	60,44
-SSAP	61,1
-M-RCNN + PSPNet	61,2
-EfficientPanopticModel - B4	61,41
-EfficientPanopticModel - B5	61,92
-AdaptIS	62
-EfficientPanopticModel - B6	62,73
-EfficientPanopticModel - B7	64,78
-Panoptic-DeepLab	67,1
-OneFormer	67,6
-EfficientPS	67,8
-Из таблиц 12–13 видно, что разработанный алгоритм имеет сопоставимые показатели точности и может превосходить большинство современных решений. При этом данный алгоритм, в отличие от существующих, способен выполнять детектирование 250 классов в рамках поставленной задачи, а благодаря меньшему числу параметров значительно снижает нагрузку на вычислительные процессоры, что отражено в таблице 14, и как следствие имеет большую скорость обработки информации, что отражено в таблице 15. 
-
-
-
-
-Таблица 14 – Сравнение разработанного алгоритма паноптической сегментации с существующими по числу обучаемых параметров
-Наименование модели	Параметры, млн 
+Таблица 3 – Сравнение разработанного алгоритма паноптической сегментации с существующими по числу обучаемых параметров
+Наименование модели	| Параметры, млн 
+------------- | ------------- 
 mIoU > 68
-EfficientPanopticModel - B0	45,2
-UPSNet	45,5
-Axial-DeepLab-L	45,8
-TASCNet	51,8
-DeeperLab	61,9
-DINetwork	64
+EfficientPanopticModel - B0	| 45,2
+UPSNet	| 45,5
+Axial-DeepLab-L	| 45,8
+TASCNet	| 51,8
+DeeperLab	| 61,9
+DINetwork	| 64
 mIoU > 75
-EfficientPanopticModel - B1	46,6
-EfficientPanopticModel - B2	47,9
-Seamless	51,43
-EfficientPanopticModel - B3	51,7
-EfficientPanopticModel - B4	59,9
-AUNet	69,9
-SSAP	78,06
-Panoptic FPN	216
+EfficientPanopticModel - B1	| 46,6
+EfficientPanopticModel - B2	| 47,9
+Seamless	| 51,43
+EfficientPanopticModel - B3	| 51,7
+EfficientPanopticModel - B4	| 59,9
+AUNet	| 69,9
+SSAP	| 78,06
+Panoptic FPN	| 216
 mIoU > 80
-EfficientPS	40,89
+EfficientPS	| 40,89
 Panoptic-DeepLab	46,73
-EfficientPanopticModel - B5	68,0
-AdaptIS	75,4
-EfficientPanopticModel - B6	84,2
+EfficientPanopticModel - B5	| 68,0
+AdaptIS	| 75,4
+EfficientPanopticModel - B6	| 84,2
 M-RCNN + PSPNet	92,0
-EfficientPanopticModel - B7	98,3
-OneFormer	223
-Таблица 15 – Сравнение разработанного алгоритма паноптической сегментации с существующими по времени на обработку
-Наименование модели	Время, мс
-1	2
-EfficientPanopticModel 	146
-EfficientPS	166
-Seamless	168
+EfficientPanopticModel - B7	| 98,3
+OneFormer	| 223
 
-Продолжение таблицы 15
-1	2
-Panoptic-DeepLab	175
-UPSNet	202
-OneFormer	336
-DeeperLab	463
-M-RCNN + PSPNet	531
+Таблица 4 – Сравнение разработанного алгоритма паноптической сегментации с существующими по времени на обработку
+Наименование модели	| Время, мс
+------------- | ------------- 
+
+EfficientPanopticModel 	| 146
+EfficientPS	| 166
+Seamless	| 168
+Panoptic-DeepLab	| 175
+UPSNet	| 202
+OneFormer	| 336
+DeeperLab	| 463
+M-RCNN + PSPNet	| 531
 
 На рисунке 4 представлена визуализация результатов выполнения поставленной задачи разработанной архитектурой.
   ![alt text](Рисунок4.png)
